@@ -1,0 +1,1405 @@
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxygen:wght@300;400;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 1200px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #252B42;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #252B42;
+    font-weight: 600;
+}
+
+.burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.hero .container {
+    padding: 0 10%;
+}
+
+.hero-title {
+    font-size: 58px;
+    font-weight: 800;
+    width: 500px;
+    line-height: 80px;
+}
+
+.hero-text {
+    font-size: 20px;
+    font-weight: 500;
+    width: 380px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-btn1,
+.hero-btn2 {
+    padding: 12px 35px;
+    border-radius: 60px;
+    font-weight: 700;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hero {
+    background: url(../images/cover.svg) no-repeat center center/cover;
+    height: 710px;
+    display: flex;
+    align-items: center;
+    color: #252B42;
+}
+
+.wraper {
+    background: #fff;
+    position: relative;
+    margin-top: -100px;
+    padding: 80px 0;
+    z-index: 10;
+}
+
+.wraper-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.wraper-item {
+    width: 320px;
+    padding: 35px 40px;
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.wraper-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.wraper-item::before,
+.wraper-item::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #FFA62B, #00A0C1);
+    left: -100%;
+    transition: all 0.5s ease;
+}
+
+.wraper-item::before {
+    top: 0;
+}
+
+.wraper-item::after {
+    bottom: 0;
+}
+
+.wraper-item:hover::before,
+.wraper-item:hover::after {
+    left: 0;
+}
+
+.wraper-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #252B42;
+    margin: 10px 0;
+}
+
+.wraper-text {
+    font-size: 14px;
+    color: #737373;
+    line-height: 22px;
+}
+
+@media (max-width: 992px) {
+    .wraper-item {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wraper {
+        margin-top: 0;
+    }
+
+    .wraper-item {
+        width: 90%;
+    }
+}
+
+.hero-btn1 {
+    background: #FFA62B;
+    color: #fff;
+    border: none;
+}
+
+.hero-btn1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    border: 2px solid #FFA62B;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.hero-btn1:hover::after {
+    opacity: 1;
+}
+
+.hero-btn2 {
+    background: none;
+    border: 2px solid #00A0C1;
+    color: #00A0C1;
+}
+
+.hero-btn2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #00A0C1;
+    border-radius: 60px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.hero-btn2:hover::before {
+    transform: scaleX(1);
+}
+
+.hero-btn2:hover {
+    color: #fff;
+}
+
+.about {
+    background: #f9f9f9;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #252B42;
+    margin-bottom: 10px;
+}
+
+.about-subtitle {
+    color: #737373;
+    width: 50%;
+    margin: 0 auto 60px;
+    line-height: 28px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-box {
+    background: #fff;
+    width: 250px;
+    padding: 40px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.about-box h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.about-box p {
+    color: #737373;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .hero {
+        height: auto;
+        padding: 120px 0;
+        text-align: center;
+    }
+
+    .hero .container {
+        padding: 0 5%;
+    }
+
+    .hero-title {
+        width: 100%;
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-subtitle {
+        width: 80%;
+    }
+}
+
+.header-link {
+    position: relative;
+    color: #737373;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.header-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FFA62B, #00A0C1);
+    transition: width 0.3s ease;
+}
+
+.header-link:hover {
+    color: #252B42;
+}
+
+.header-link:hover::after {
+    width: 100%;
+}
+
+.hero-btn1,
+.hero-btn2 {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 60px;
+}
+
+.hero-btn1::before,
+.hero-btn2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.4s ease;
+}
+
+.hero-btn1:hover::before,
+.hero-btn2:hover::before {
+    left: 0;
+}
+
+.hero-btn1:hover {
+    background: #ffb84d;
+    transform: scale(1.05);
+}
+
+.hero-btn2:hover {
+    background: #00A0C1;
+    transform: scale(1.05);
+}
+
+.hero-btn2:hover a {
+    color: #fff;
+}
+
+.about-item {
+    box-shadow: 10px 10px 10px 10px #e0dfdf;
+    width: 200px;
+    padding-top: 40px;
+    border-radius: 60px;
+    height: 200px;
+    opacity: 1;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.about-item::before,
+.about-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FFA62B, #00A0C1);
+    left: -100%;
+    transition: left 0.5s ease;
+}
+
+.about-item::before {
+    top: 0;
+}
+
+.about-item::after {
+    bottom: 0;
+}
+
+.about-item:hover::before,
+.about-item:hover::after {
+    left: 0;
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+}
+
+.advice {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.advice-container {
+    text-align: center;
+}
+
+.advice-title-name {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    margin-bottom: 10px;
+}
+
+.advice-text-name {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #737373;
+    max-width: 470px;
+    margin: 0 auto 40px auto;
+}
+
+.advice-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advice-item {
+    position: relative;
+    width: 238px;
+    height: 321px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.advice-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.advice-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, #00A0C1, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.advice-item:hover::before {
+    opacity: 0.2;
+}
+
+.advice-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 2px solid #00A0C1;
+}
+
+.advice-title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #252B42;
+    margin: 15px;
+    line-height: 24px;
+}
+
+.advice-text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #737373;
+    margin: 0 15px;
+}
+
+@media (max-width: 1024px) {
+    .advice-list {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .advice-item {
+        width: 45%;
+        height: auto;
+    }
+
+    .advice-title-name {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .advice-item {
+        width: 100%;
+    }
+
+    .advice-title-name {
+        font-size: 26px;
+    }
+
+    .advice-text-name {
+        width: 90%;
+    }
+}
+
+/* === MAIN SECTION === */
+
+.main {
+  padding: 100px 0;
+  background: #f9f9f9;
+}
+
+.main-container {
+  text-align: center;
+}
+
+.main-title-name {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 57px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #252B42;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* === PSEUDO EFFECT for title === */
+.main-title-name::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 10px auto 0;
+  background: #FFA62B;
+  border-radius: 2px;
+}
+
+.main-text-name {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  width: 511px;
+  margin: 0 auto 60px;
+  color: #555;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+/* === LAYOUT === */
+.main-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.main-item-vd {
+  flex: 1 1 45%;
+  max-width: 560px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* === PSEUDO border animation === */
+.main-item-vd::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #252B42;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.main-item-vd:hover::before {
+  opacity: 1;
+}
+
+.main-item-vd:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.iframe {
+  width: 100%;
+  height: 315px;
+  border: none;
+}
+
+/* === TEXT SECTION === */
+.main-item {
+  flex: 1 1 40%;
+  max-width: 400px;
+  text-align: left;
+  position: relative;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  overflow: hidden;
+}
+
+.main-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #252B42;
+  opacity: 0.08;
+  transition: all 0.6s ease;
+}
+
+.main-item:hover::before {
+  left: 0;
+}
+
+.main-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(37,43,66,0.3);
+}
+
+.main-title {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 28px;
+  color: #252B42;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+.main-text {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  color: #555;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+.main-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-icon img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.main-icon img:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.main-icon p {
+  font-size: 14px;
+  color: #252B42;
+  font-weight: 600;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 992px) {
+  .main-text-name {
+    width: 80%;
+  }
+
+  .main-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-item-vd,
+  .main-item {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title-name {
+    font-size: 32px;
+  }
+
+  .main-item {
+    padding: 25px 20px;
+  }
+
+  .iframe {
+    height: 250px;
+  }
+
+  .main-icon p {
+    font-size: 13px;
+  }
+}
+
+
+/* === ARTICLE (BRANDS/LOGO) === */
+.article {
+    background: #fff;
+    padding: 60px 0;
+    position: relative;
+}
+
+/* konteyner */
+.article-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* logo ro‘yxati */
+.article-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* har bir logo */
+.article-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+/* logo rasmi */
+.article-item img {
+    width: 100px;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+/* === PSEVDOLAR === */
+
+/* yuqoridan chiziq chiqadi */
+.article-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffa62b, #00a0c1);
+    transition: left 0.5s ease;
+}
+
+/* pastdan chiziq chiqadi */
+.article-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00a0c1, #ffa62b);
+    transition: right 0.5s ease;
+}
+
+/* hover effekti */
+.article-item:hover::before {
+    left: 0;
+}
+
+.article-item:hover::after {
+    right: 0;
+}
+
+.article-item:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .article-list {
+        gap: 40px;
+    }
+
+    .article-item img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .article-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .article-item img {
+        width: 70px;
+    }
+}
+
+/* === SUBSCRIBE SECTION === */
+.section {
+    background: #16697A;
+    width: 100%;
+    border-radius: 8px;
+    padding: 30px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === PSEVDOLAR === */
+.section::before,
+.section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    transition: all 0.8s ease;
+}
+
+/* chap yuqori dekor */
+.section::before {
+    top: -60px;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 166, 43, 0.3);
+}
+
+/* o‘ng past dekor */
+.section::after {
+    bottom: -70px;
+    right: -70px;
+    width: 140px;
+    height: 140px;
+    background: rgba(0, 160, 193, 0.25);
+}
+
+/* hover paytida sekin siljiydi */
+.section:hover::before {
+    transform: translate(15px, 15px);
+}
+
+.section:hover::after {
+    transform: translate(-15px, -15px);
+}
+
+/* konteyner */
+.section-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+/* sarlavha */
+.section-title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    max-width: 280px;
+}
+
+/* input joyi */
+.input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* email maydoni */
+.section-input {
+    width: 400px;
+    height: 58px;
+    border-radius: 30px;
+    padding-left: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+
+/* tugma */
+.section-btn {
+    padding: 16px 28px;
+    background: #FFA62B;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.section-btn:hover {
+    background: #ffb84d;
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .section-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-input {
+        width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 20px;
+        height: auto;
+    }
+
+    .section-input {
+        width: 100%;
+    }
+
+    .input {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .section-btn {
+        width: 100%;
+    }
+}
+
+.contact-title-name {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 57px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #252B42;
+  margin-bottom: 15px;
+}
+
+.contact-text-name {
+  font-family: Montserrat;
+  font-weight: 500;
+  margin: 0 auto 50px;
+  font-size: 14px;
+  width: 470px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #555;
+}
+
+.contact-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-item {
+  width: 327px;
+  height: 333px;
+  padding: 50px 25px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* === PSEUDO ELEMENTS (rang #252B42 bilan) === */
+.contact-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #252B42;
+  opacity: 0.1;
+  transition: all 0.5s ease;
+}
+
+.contact-item:hover::before {
+  left: 0;
+}
+
+.contact-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(37, 43, 66, 0.3);
+}
+
+/* === TEXT STYLES === */
+.contact-text {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #252B42;
+  letter-spacing: 0.2px;
+  margin: 10px;
+}
+
+.contact-title {
+  font-family: Montserrat;
+  font-weight: 700;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #252B42;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+/* === BUTTON STYLES === */
+.contact-btn {
+  position: relative;
+  padding: 10px 30px;
+  background: none;
+  border: 2px solid #FFA62B;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.contact-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,166,43,0.3), rgba(255,255,255,0));
+  transition: 0.5s;
+}
+
+.contact-btn:hover::after {
+  left: 100%;
+}
+
+.contact-link {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFA62B;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact-btn:hover {
+  background: #FFA62B;
+  border-color: #FFA62B;
+}
+
+.contact-btn:hover .contact-link {
+  color: #fff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .contact-list {
+    justify-content: center;
+  }
+
+  .contact-text-name {
+    width: 80%;
+  }
+
+  .contact-item {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 90%;
+    animation: slideUp 1s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Har bir maydonni (label va input) o'rab turgan guruh stili */
+.form-group {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    /* Rasmga o'xshash pastki chiziq */
+    border-bottom: 1px solid #333; 
+}
+
+/* Majburiy maydon belgisi (yulduzcha) stili */
+.required {
+    color: #ff4500; /* Yorqin rang */
+    font-weight: bold;
+}
+
+/* Input va Textarea elementlarining asosiy stili */
+.form-input,
+.form-textarea {
+    width: 100%;
+    background-color: transparent; /* Shaffof fon */
+    border: none;
+    color: #fff; /* Yozilgan matnning rangi */
+    font-size: 16px;
+    padding: 10px 0;
+    outline: none; /* Fokusdagi standart ramkani o'chirish */
+    transition: border-bottom 0.3s ease;
+}
+
+/* Label matnlarining stili (Name, Email kabi yozuvlar) */
+.form-label {
+    display: block;
+    font-size: 14px;
+    color: #aaa; /* Kulrang matn */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Fokusdagi (Faol) maydonlar (chiziqni yorqin oq qilish) */
+.form-input:focus,
+.form-textarea:focus {
+    border-bottom: 1px solid #fff; 
+}
+
+/* Izoh maydoni uchun qo'shimcha stil */
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Tugma (Button) uchun stil */
+.form-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 40px;
+    
+    /* Chiroyli gradient */
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Soya effekti */
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+    
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Tugma ustiga sichqoncha kelganda (Hover) */
+.form-submit-btn:hover {
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+    transform: translateY(-2px);    
+}
+
+
+.form-submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 69, 0, 0.4);
+}
+.form-input,
+.form-textarea,
+.form-submit-btn {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+@media screen and (max-width: 500px) {
+    
+    .container {
+        padding: 0 15px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-submit-btn {
+        font-size: 15px; 
+    }
+
+    .form-submit-btn {
+        padding: 12px 20px;
+        margin-top: 30px; 
+    }
+}
+
+
+/* ==================================== */
+/* 1. Asosiy Footer Stili */
+/* ==================================== */
+
+.site-footer {
+    background-color: #316d7a; /* Rasmga o'xshash to'q firuza rang */
+    color: #fff; /* Umumiy oq matn */
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Konteynerni markazlashtirish (agar sizda allaqachon mavjud bo'lmasa) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================================== */
+/* 2. Ustunlar Tuzilishi (Flexbox yordamida) */
+/* ==================================== */
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between; /* Ustunlar orasida bo'shliq qoldirish */
+    flex-wrap: wrap; /* Kichik ekranlarda pastga tushishi uchun */
+    gap: 20px; /* Ustunlar orasidagi minimal bo'shliq */
+}
+
+.footer-col {
+    width: 18%; /* Taxminan 5 ta ustun uchun */
+    min-width: 150px; /* Mobil qurilmalar uchun minimal kenglik */
+    margin-bottom: 20px;
+}
+
+/* ==================================== */
+/* 3. Sarlavhalar va Havolalar Stili */
+/* ==================================== */
+
+.footer-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style: none; /* Standart nuqtalarni olib tashlash */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #c9e0e5; /* Havolalar uchun ochroq rang */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff; /* Hover effekti */
+}
+
+/* ==================================== */
+/* 4. Aloqa (Get In Touch) Qismi Stili */
+/* ==================================== */
+
+.footer-contact {
+    /* Bu ustun odatda boshqalaridan farq qilmaydi, lekin elementlar stili bor */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #c9e0e5; 
+    font-size: 14px;
+}
+
+.contact-icon {
+    font-size: 18px; /* Ikonka hajmi */
+    margin-right: 15px;
+    line-height: 1; /* Matn bilan bir qatorda bo'lishini ta'minlash */
+    color: #fff; /* Ikonka uchun oq rang */
+}
+
+.contact-link,
+.contact-text {
+    color: #c9e0e5; 
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-link:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    
+    .footer-col {
+        width: 45%;
+        min-width: 180px;
+    }
+    
+    
+    .footer-contact {
+        width: 100%; 
+        order: 6; 
+        margin-top: 20px;
+    }
+    
+    /* Mobil qurilmalarda footer paddingini kamaytirish */
+    .site-footer {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Eng kichik ekranlarda barcha ustunlarni bitta qatorga tushirish */
+    .footer-col {
+        width: 100%;
+        min-width: auto;
+    }
+}
